@@ -4,26 +4,26 @@ const userSchema = new mongoose.Schema(
   {
     email: {
       type: String,
-      require: true,
+      required: true,
       unique: true,
     },
     fullName: {
       type: String,
-      require: true,
+      required: true,
     },
     password: {
-      type: true,
-      require: true,
+      type: String,
+      required: true,
       minlength: 6,
     },
-
     profilePic: {
       type: String,
-      default: true,
+      default: "",
     },
   },
   { timestamps: true }
 );
 
 const User = mongoose.model("User", userSchema);
+
 export default User;
